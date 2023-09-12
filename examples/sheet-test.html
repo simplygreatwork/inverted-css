@@ -7,10 +7,16 @@
 		<title>Example</title>
 		<style>
 		</style>
+		<script type="importmap">{"imports": {
+			"html-console": "../../../html-console/module.js",
+			"test-suite": "../../../test-suite/module.js"
+		}}</script>
 		<script type="module">
 			
 			import { sheet_init } from '../source/sheet.js'
 			import { sheet_render } from '../source/sheet.js'
+			import { console_init } from 'html-console'
+			console_init('body')
 			
 			function run() {
 				

@@ -7,7 +7,14 @@
 		<title>Example</title>
 		<style>
 		</style>
+		<script type="importmap">{"imports": {
+			"html-console": "../../../html-console/module.js",
+			"test-suite": "../../../test-suite/module.js"
+		}}</script>
 		<script type="module">
+			
+			import { console_init } from 'html-console'
+			console_init('body')
 			
 			export function experiment() {
 				
