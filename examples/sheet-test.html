@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0">
+		<title>Example</title>
+		<style>
+		</style>
+		<script type="module">
+			
+			import { sheet_init } from '../source/sheet.js'
+			import { sheet_render } from '../source/sheet.js'
+			
+			function run() {
+				
+				if (true) sheet_test()
+				if (false) sheet_test_2()
+			}
+			
+			export function sheet_test() {
+				
+				let sheet = sheet_init()
+				let rule = sheet.rule
+				let $ = rule()
+				rule().color('red', $.element('div').class('row'))
+				rule().color('white', $.element('div').class('row2'))
+				rule().element('div').class('row3').color('blue')
+				sheet_render(sheet, false)
+			}
+			
+			export function sheet_test_2() {
+				
+				let sheet = sheet_init()
+				let rule = sheet.rule
+				let $ = rule()
+				rule().color('white', $.element('a')).background('black', chain().element('a'))
+				rule().color('white', 'a').background('black', 'a')
+				rule().color('white', 'legend').background('black', 'legend')
+				rule().element('div').class('class').background('red')
+				rule().element('span').id('id').background('blue')
+				rule().element('span').id('id').background('blue')
+				rule().background('#ddddff', $.class('row').class('row').class('selected'))
+				rule().element('input').attr('type', '"checkbox"').font_size('16px')
+				sheet_render(sheet, false)
+			}
+			
+			run()
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0">
+		<title>Example</title>
+		<style>
+		</style>
+		<script type="module">
+			
+			export function experiment() {
+				
+				let sheet = sheet_init()
+				let rule = sheet.rule
+				let $ = rule()
+				rule().hello('Mr.')
+				$.hello('Mrs.')
+			}
+			
+			export function sheet_init() {
+				
+				let sheet = {}
+				sheet.rule = function() {
+					return chain_init(sheet)
+				}
+				return sheet
+			}
+			
+			export function chain_init(sheet) {
+				
+				return {
+					sheet: sheet,
+					hello: (name) => console.log(`Hello ${name}`)
+				}
+			}
+			
+			experiment()
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
