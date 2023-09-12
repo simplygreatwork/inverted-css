@@ -1,0 +1,16 @@
+
+# Inverted CSS sheets in Javascript
+
+- Properties first, then selectors, then media queries.
+- Minimize mental context switching when writing styles.
+- Granular.
+
+# Install
+
+git clone git@github.com:simplygreatwork/inverted-css.git && \
+git clone git@github.com:simplygreatwork/html-console.git && \
+git clone git@github.com:simplygreatwork/test_suite.git
+
+# Run
+
+Load the examples in your browser and the view console output.
